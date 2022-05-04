@@ -1,0 +1,58 @@
+1. define NAME_MAX to 25
+2. define MAX_FILLS 5
+3. define NUM_VEHICLES 2
+4. enter main function
+5. instantialize struct guzzlers with {{"Ford", "F150", 2, {{21992, 22580, 72.1}, {22680, 23011, 68.5}} }, {"Cadillac", "Escalade", 1,{10687, 11219, 82.8}}
+6. instantialize struct top and bottom in the safe state
+7. declare double avg
+8. call function getAverage with the arguments (guzzlers, 2, &top, &bottom)
+9. enter function getAverage with parameters (struct DrivingRecord recs[], int nrecs, struct DrivingRecord* best, struct DrivingRecord* worst)
+10. declare int i, worstPos = -1, bestPos = -1
+11. declare double dist, fillDist,economy, totalEconomy = 0.0, worstEconomy = -1, bestEconomy = 9999
+12. set i = 0, 0 < 2 (nrecs) ?
+	a) enter for loop
+13. set dist and economy to 0
+14. set j = 0, 0 < 2 (recs[0].numFills) ?
+	a) enter for loop
+15. set fillDist = 23011 - 22680 = 331
+16. set economy = 68.5 / (331 * 100.0) = 0.002
+17. set dist = 331
+18. j is incremented by 1 (j = 1)
+19. 1 < 1 ? (j < recs[1].numFills)
+	a) false, skip for loop
+20. set economy = 0.002 / 2 = 0.001
+21. if 0.001 < 9999 (economy < bestEconomy)
+	a)true, enter if code block
+22. set bestEconomy = 0.001
+23. set bestPos = 0
+24. if 0.001 > -1
+	a)true, enter if code block
+25. set worstEconomy = 0.001
+26. set worstPos = 0
+27. set totalEconomy = 0.001
+28. i is incremented by 1 (i = 1)
+29. 1 < 2 ? (i < nrecs)
+	a) true, enter for loop
+30. set dist and economy to 0
+31. set j = 0, 0 < 1 ? (j < recs[1].numFills)
+	a)true, enter for loop
+32. set fillDist = 11219 - 10687 = 532
+33. set economy = 82.8 / (532 * 100.00) = 0.001
+34. set dist = 532
+35. j is incremented by 1 (j = 1)
+36. 1 < 1 ? (j < recs[1].numFills)
+	a)false, exit for loop
+37. set economy = 0.001 / 1 = 0.001
+38. if 0.001 < 0.001 ?
+	a) false, skip if code block
+39. if 0.001 > 0.001 ?
+	a) false, skip if code block
+40. set totalEconomy = 0.001 + 0.001 = 0.002
+41. i is incremented by 1 (i = 2)
+42. 2 < 2 ? (i < nrecs)
+	a)false, exit for loop
+43. set *best = recs[0]
+44. set *worst = recs[0]
+45. return (0.002 / 2 = 0.001) to main function
+46. display to user "Fleet average is 0.001/100km with the best being Ford F1250 and the worst being Ford F1250\n"
+47. return 0 to OS
